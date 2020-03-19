@@ -1,0 +1,55 @@
+name: covid_19_info
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Service Locator
+  get_it: ^2.0.1
+
+  #Bloc for state management
+  flutter_bloc: ^0.21.0
+
+  # Value equality
+  equatable: ^0.4.0
+
+  #For functional programming
+  dartz: ^0.8.6
+
+  #Remote API
+  data_connection_checker: ^0.3.4
+  http: ^0.12.0+2
+
+  #Local Cache
+  shared_preferences: ^0.5.3+4
+
+  #Launcher Icon
+  flutter_launcher_icons: ^0.7.4
+
+  cupertino_icons: ^0.1.2
+
+flutter_icons:
+  image_path: "icons/final_icon.png" 
+  android: true
+  ios: true
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  #For creating mock tests
+  mockito: ^4.1.0
+  
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Questrial
+      fonts:
+        - asset: fonts/Questrial-Regular.ttf
+
