@@ -11,7 +11,7 @@ Here is a video tutorial to get you started if you are interested in learning Fl
 
 - [Video Tutorial: Flutter Clean Architecture and Test Driven Developement](https://www.youtube.com/watch?v=dc3B_mMrZ-Q&t=577s)
 
-If you want to learn more about the used REST API's
+Here are few resources you can use if you want to learn more about the used REST API's in this app
 
 - [Covid 19 REST API](https://github.com/NovelCOVID/API)
 - [Countries REST API](https://restcountries.eu/)
