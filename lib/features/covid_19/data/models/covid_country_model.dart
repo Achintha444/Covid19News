@@ -69,6 +69,21 @@ class CovidCountryModel extends CovidCountry {
     );
   }
 
+  factory CovidCountryModel.fromJsonSingle(
+      Map<String, dynamic> covidCountry) {
+    return CovidCountryModel(
+      active: covidCountry['active'],
+      country: covidCountry['country'],
+      critical: covidCountry['critical'],
+      imageUrl: covidCountry['flag'],
+      casesPerOneMillion: covidCountry['casesPerOneMillion'],
+      todayDeaths: covidCountry['todayDeaths'],
+      cases: covidCountry['cases'],
+      deaths: covidCountry['deaths'],
+      recovered: covidCountry['recovered'],
+    );
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'active': super.getActive,
@@ -76,7 +91,7 @@ class CovidCountryModel extends CovidCountry {
       'critical': super.getCritical,
       'imageUrl': super.getImageUrl,
       'casesPerOneMillion': super.getCasesPerOneMillion,
-      'todayDeaths':super.getTodayDeaths,
+      'todayDeaths': super.getTodayDeaths,
       'cases': super.getCases,
       'deaths': super.getDeaths,
       'recovered': super.getRecovered,

@@ -9,3 +9,5 @@ abstract class Faliure extends Equatable {
 class ServerFaliure extends Faliure {}
 
 class CacheFaliure extends Faliure {}
+
+class CountryNotFoundFaliure extends Faliure{}
