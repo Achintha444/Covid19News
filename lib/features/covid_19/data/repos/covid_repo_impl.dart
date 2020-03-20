@@ -6,6 +6,8 @@ import '../../../../core/error/Faliure.dart';
 import '../../domain/entities/covid_all.dart';
 import '../../domain/entities/covid_country.dart';
 import '../../domain/repos/covid_repo.dart';
+import '../datasources/covid_local_data_source.dart';
+import '../datasources/covid_remote_data_source.dart';
 
 class CovidRepoImpl implements CovidRepo{
 
