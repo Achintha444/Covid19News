@@ -1,3 +1,4 @@
+import 'package:covid_19_info/features/covid_19/presentation/widgets/LoadedCovidCountryDisplay.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,7 +42,7 @@ class CovidPage extends StatelessWidget {
                   } else if (state is LoadedCovidAll) {
                     return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
                   } else if (state is LoadedCovidCountry) {
-                    re
+                    return LoadedCovidCountryDisplay(covidCountry: state.covidCountry);
                   }
                 },
               ),

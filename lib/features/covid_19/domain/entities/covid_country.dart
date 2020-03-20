@@ -21,11 +21,13 @@ class CovidCountry extends Equatable {
   int _active;
   int _critical;
   int _casesPerOneMillion;
+  int _todayCases;
 
   CovidCountry({
     @required String imageUrl,
     @required String country,
     @required int cases,
+    @required int todayCases,
     @required int deaths,
     @required int todayDeaths,
     @required int recovered,
@@ -41,7 +43,8 @@ class CovidCountry extends Equatable {
           recovered,
           active,
           critical,
-          casesPerOneMillion
+          casesPerOneMillion,
+          todayCases,
         ]) {
     this._imageUrl = imageUrl;
     this._country = country;
@@ -52,6 +55,7 @@ class CovidCountry extends Equatable {
     this._active = active;
     this._critical = critical;
     this._casesPerOneMillion = casesPerOneMillion;
+    this._todayCases = todayCases;
   }
 
   String get getImageUrl {
@@ -89,4 +93,9 @@ class CovidCountry extends Equatable {
   int get getCasesPerOneMillion {
     return this._casesPerOneMillion;
   }
+
+  int get getTodayCases{
+    return this._todayCases;
+  }
+
 }

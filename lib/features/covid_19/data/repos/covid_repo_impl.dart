@@ -1,3 +1,4 @@
+import 'package:covid_19_info/core/Error/Faliure.dart' as prefix0;
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 
@@ -57,6 +58,8 @@ class CovidRepoImpl implements CovidRepo {
         return Right(_finalCovidCountryModel);
       } on ServerException {
         return (Left(ServerFaliure()));
+      } on CountryNotFoundException{
+        return (Left(CountryNotFoundFaliure()));
       }
     } else {
       try {

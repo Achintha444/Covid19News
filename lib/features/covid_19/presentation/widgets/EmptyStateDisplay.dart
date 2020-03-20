@@ -19,6 +19,7 @@ class EmptyStateDisplay extends StatelessWidget {
           ),
         ),
       ),
+    
     );
   }
 }

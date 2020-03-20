@@ -31,6 +31,9 @@ dependencies:
 
   #Launcher Icon
   flutter_launcher_icons: ^0.7.4
+  
+  #Show SVG Pictures
+  flutter_svg: ^0.17.3+1
 
   cupertino_icons: ^0.1.2
 

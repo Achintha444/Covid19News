@@ -48,8 +48,10 @@ class CovidRemoteDataSourceImpl implements CovidRemoteDataSource {
     final responseCountry = await this
         ._httpClient
         .get('http://restcountries.eu/rest/v2/name/$country');
-
-    if ((responseCovid.statusCode != 200) ||
+    if(responseCountry.statusCode == 404){
+      throw CountryNotFoundException();
+    }
+    else if ((responseCovid.statusCode != 200) ||
         (responseCountry.statusCode != 200)) {
       throw ServerException();
     } else {

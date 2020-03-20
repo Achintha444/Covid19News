@@ -21,12 +21,19 @@ class _CovidControlState extends State<CovidControl> {
       children: <Widget>[
         Container(
           child: TextField(
+            controller: this.controller,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Input a Country',
             ),
             onChanged: (val) {
               this.inputString = val;
+            },
+            onSubmitted: (_) {
+              this.controller.clear();
+              BlocProvider.of<CovidBloc>(context).dispatch(
+                GetCountrySpecificCovidInfoEvent(country: this.inputString),
+              );
             },
           ),
         ),
@@ -41,6 +48,7 @@ class _CovidControlState extends State<CovidControl> {
                 color: Theme.of(context).accentColor,
                 textColor: Colors.white,
                 onPressed: () {
+                  this.controller.clear();
                   BlocProvider.of<CovidBloc>(context).dispatch(
                     GetCountrySpecificCovidInfoEvent(country: this.inputString),
                   );
@@ -75,13 +83,37 @@ class _CovidControlState extends State<CovidControl> {
                 color: Theme.of(context).primaryColor,
                 textColor: Colors.white,
                 onPressed: () {
-                  BlocProvider.of<CovidBloc>(context).dispatch(
-                    GetAllCovidInfoEvent(),
-                  );
+                  BlocProvider.of<CovidBloc>(context)
+                      .dispatch(GetLKSpecificCovidInfoEvent());
                 },
               ),
             ),
           ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 3),
+        ),
+        Center(
+          child: SingleChildScrollView(
+            child: Text(
+              'IMPORTANT',
+              style: TextStyle(
+                  fontSize: 14, color: Theme.of(context).primaryColor),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 3),
+        ),
+        Center(
+          child: SingleChildScrollView(
+            child: Text(
+              'Search "South Korea" as "Korea"',
+              style: TextStyle(fontSize: 14),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ),
       ],
     );

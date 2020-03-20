@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants/theme_data.dart';
 
@@ -13,30 +14,19 @@ class AppBarDesign extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Padding(
-        padding: const EdgeInsets.only(top: 3.0),
-        child: Text(
-          'Covid 19 News'.toUpperCase(),
-          style: mainTextStyle,
+      title: Center(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 3.0),
+          child: Text(
+            'Covid 19 News'.toUpperCase(),
+            style: mainTextStyle,
+          ),
         ),
       ),
       backgroundColor: Colors.white,
       bottomOpacity: 0.0,
       elevation: 0.0,
       iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
-      actions: <Widget>[
-        new Container(
-          width: 50.0,
-          height: 50.0,
-          decoration: new BoxDecoration(
-            shape: BoxShape.circle,
-            image: new DecorationImage(
-              fit: BoxFit.fill,
-              image: new NetworkImage("https://i.imgur.com/BoN9kdC.png"),
-            ),
-          ),
-        ),
-      ],
     );
   }
 

@@ -1,3 +1,4 @@
+import 'package:covid_19_info/core/Error/exceptions.dart';
 import 'package:covid_19_info/features/covid_19/domain/entities/covid_country.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,7 @@ class CovidCountryModel extends CovidCountry {
     @required String imageUrl,
     @required String country,
     @required int cases,
+    @required int todayCases,
     @required int deaths,
     @required int todayDeaths,
     @required int recovered,
@@ -37,6 +39,7 @@ class CovidCountryModel extends CovidCountry {
             imageUrl: imageUrl,
             country: country,
             cases: cases,
+            todayCases: todayCases,
             deaths: deaths,
             todayDeaths: todayDeaths,
             recovered: recovered,
@@ -60,17 +63,17 @@ class CovidCountryModel extends CovidCountry {
       active: covidCountry['active'],
       country: covidCountry['country'],
       critical: covidCountry['critical'],
-      imageUrl: country['flag'],
+      imageUrl: covidCountry['country'],
       casesPerOneMillion: covidCountry['casesPerOneMillion'],
       todayDeaths: covidCountry['todayDeaths'],
       cases: covidCountry['cases'],
+      todayCases: covidCountry['todayCases'],
       deaths: covidCountry['deaths'],
       recovered: covidCountry['recovered'],
     );
   }
 
-  factory CovidCountryModel.fromJsonSingle(
-      Map<String, dynamic> covidCountry) {
+  factory CovidCountryModel.fromJsonSingle(Map<String, dynamic> covidCountry) {
     return CovidCountryModel(
       active: covidCountry['active'],
       country: covidCountry['country'],
@@ -79,6 +82,7 @@ class CovidCountryModel extends CovidCountry {
       casesPerOneMillion: covidCountry['casesPerOneMillion'],
       todayDeaths: covidCountry['todayDeaths'],
       cases: covidCountry['cases'],
+      todayCases: covidCountry['todayCases'],
       deaths: covidCountry['deaths'],
       recovered: covidCountry['recovered'],
     );
@@ -93,6 +97,7 @@ class CovidCountryModel extends CovidCountry {
       'casesPerOneMillion': super.getCasesPerOneMillion,
       'todayDeaths': super.getTodayDeaths,
       'cases': super.getCases,
+      'todayCases': super.getTodayCases,
       'deaths': super.getDeaths,
       'recovered': super.getRecovered,
     };
