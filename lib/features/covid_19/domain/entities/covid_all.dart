@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CovidAll extends Equatable {
   int _cases;
@@ -10,7 +10,7 @@ class CovidAll extends Equatable {
     @required int cases,
     @required int deaths,
     @required int recovered,
-  }) {
+  }) : super([cases, deaths,recovered]) {
     this._cases = cases;
     this._deaths = deaths;
     this._recovered = recovered;
