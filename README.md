@@ -14,4 +14,3 @@ Here is a video tutorial to get you started if you are interested in learning Fl
 Here are few resources you can use if you want to learn more about the used REST API's in this app
 
 - [Covid 19 REST API](https://github.com/NovelCOVID/API)
-- [Countries REST API](https://restcountries.eu/)
