@@ -5,6 +5,7 @@ abstract class CovidLocalDataSource {
   /// Throws a [CacheException] for all error codes.
   Future<CovidCountryModel> getLastCountrySpecifiCovidInfo();
 
+  /// Throws a [CacheException] for all error codes.
   Future<CovidAllModel> getLastAllCovidInfo();
 
   Future<void> cacheAllCovidInfo(CovidAllModel covidAllModel);
