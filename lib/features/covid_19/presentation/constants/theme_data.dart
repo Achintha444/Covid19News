@@ -11,3 +11,7 @@ var mainTextStyle = TextStyle(
   color: Color(0xffc23938),
   letterSpacing: 1,
 );
+
+var accentTextStyle = TextStyle(
+  color: Colors.white,
+);

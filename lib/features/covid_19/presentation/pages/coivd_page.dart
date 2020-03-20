@@ -30,17 +30,21 @@ class CovidPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               //* Top Half
-              BlocBuilder<CovidBloc, CovidState>(builder: (context, state) {
-                if (state is Empty) {
-                  return EmptyStateDisplay(message: 'Start Searching');
-                } else if (state is Loading) {
-                  return LoadingStateDisplay();
-                } else if (state is Error) {
-                  return EmptyStateDisplay(message: state.message);
-                } else if (state is LoadedCovidAll) {
-                  return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
-                } else if (state is LoadedCovidCountry) {}
-              }),
+              BlocBuilder<CovidBloc, CovidState>(
+                builder: (context, state) {
+                  if (state is Empty) {
+                    return EmptyStateDisplay(message: 'Start Searching');
+                  } else if (state is Loading) {
+                    return LoadingStateDisplay();
+                  } else if (state is Error) {
+                    return EmptyStateDisplay(message: state.message);
+                  } else if (state is LoadedCovidAll) {
+                    return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
+                  } else if (state is LoadedCovidCountry) {
+                    re
+                  }
+                },
+              ),
 
               //* Bottom Half
               new CovidControl(),
