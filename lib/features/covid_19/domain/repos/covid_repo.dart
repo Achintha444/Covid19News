@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/Faliure.dart';
+import '../../../../core/Error/Faliure.dart';
 import '../entities/covid_all.dart';
 import '../entities/covid_country.dart';
 
