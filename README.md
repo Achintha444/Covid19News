@@ -15,4 +15,6 @@ Here are few resources you can use if you want to learn more about the used REST
 
 - [Covid 19 REST API](https://github.com/NovelCOVID/API)
 
-<image src = 'ss/ss2.jpeg' height = '50'> <image src = 'ss/ss3.jpeg' height = '50'>
+## Screen Shots of the App
+
+<image src = 'ss/ss2.jpeg' height = '500'> <image src = 'ss/ss3.jpeg' height = '500'>
