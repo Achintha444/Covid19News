@@ -23,14 +23,7 @@ class SplashScreen extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Theme.of(context).accentColor,
-              Theme.of(context).primaryColor,
-            ],
-          ),
+          color: Theme.of(context).primaryColor,
         ),
         child: Center(
           child: BlocBuilder<SplashScreenBloc, SplashScreenState>(
@@ -44,7 +37,7 @@ class SplashScreen extends StatelessWidget {
               if ((state is Initial) || (state is Loading)) {
                 return SplashScreenWidget();
               } else if (state is Loaded) {
-                return InternetErrorWidget();
+                return CovidPage();
               } else if (state is InternetError) {
                 return InternetErrorWidget();
               }

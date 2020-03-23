@@ -16,7 +16,7 @@ class SplashScreenRepoImpl implements SplashScreenRepo {
   @override
   Future<Either<Faliure, EmptyEntity>> navigateToMainScreen() async {
     await Future.delayed(
-      Duration(seconds: 5),
+      Duration(seconds: 4),
     );
     if (await this._networkInfo.isConnected) {
       return Right(EmptyEntity());
