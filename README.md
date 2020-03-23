@@ -17,4 +17,4 @@ Here are few resources you can use if you want to learn more about the used REST
 
 ## Screen Shots of the App
 
-<image src = 'ss/ss1.jpg' height = '500'>&nbsp;<image src = 'ss/ss2.jpg' height = '500'>>&nbsp;<image src = 'ss/ss3.jpg' height = '500'><image src = 'ss/ss4.jpeg' height = '500'>>&nbsp;<image src = 'ss/ss5.jpeg' height = '500'>
+<image src = 'ss/ss1.jpg' height = '500'>&nbsp;<image src = 'ss/ss2.jpg' height = '500'>>&nbsp;<image src = 'ss/ss3.jpg' height = '500'><image src = 'ss/ss4.jpeg' height = '500'>&nbsp;<image src = 'ss/ss5.jpeg' height = '500'>
