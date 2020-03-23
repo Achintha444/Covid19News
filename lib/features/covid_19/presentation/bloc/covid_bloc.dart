@@ -43,7 +43,6 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
     CovidEvent event,
   ) async* {
     if (event is GetAllCovidInfoEvent) {
-      print ('aaaaaaaa');
       yield Loading();
       final response = await getAllCovidInfo(
         NoParams(),

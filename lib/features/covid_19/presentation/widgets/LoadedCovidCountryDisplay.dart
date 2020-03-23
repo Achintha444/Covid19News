@@ -24,15 +24,15 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
               child: Text(
                 covidCountry.getCountry.toString().toUpperCase(),
                 style: TextStyle(
-                  fontSize: 45,
+                  fontSize: 40,
                   color: Theme.of(context).primaryColor,
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 6,
-                bottom: 6,
+                top: 5,
+                bottom: 5,
               ),
             ),
             Center(
@@ -45,8 +45,8 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 5,
-                bottom: 5,
+                top: 4,
+                bottom: 4,
               ),
             ),
             Center(
@@ -60,8 +60,8 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 5,
-                bottom: 5,
+                top: 4,
+                bottom: 4,
               ),
             ),
             Center(
@@ -75,8 +75,8 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 5,
-                bottom: 5,
+                top: 4,
+                bottom: 4,
               ),
             ),
             Center(
@@ -90,8 +90,8 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 5,
-                bottom: 5,
+                top: 4,
+                bottom: 4,
               ),
             ),
             Center(
@@ -120,8 +120,8 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 5,
-                bottom: 5,
+                top: 4,
+                bottom: 4,
               ),
             ),
             Center(
@@ -135,8 +135,8 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 5,
-                bottom: 5,
+                top: 4,
+                bottom: 4,
               ),
             ),
             Center(

@@ -13,9 +13,37 @@ import 'features/covid_19/domain/usecases/get_all_covid_info.dart';
 import 'features/covid_19/domain/usecases/get_country_specific_covid_info.dart';
 import 'features/covid_19/domain/usecases/get_lk_specific_covid_info.dart';
 import 'features/covid_19/presentation/bloc/covid_bloc.dart';
+import 'features/splash_screen/data/repos/splash_scree_repo_impl.dart';
+import 'features/splash_screen/domain/repos/splash_screen_repo.dart';
+import 'features/splash_screen/domain/usecases/navigate_to_main_screen.dart';
+import 'features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
 
 final sl = GetIt.instance;
 Future<void> init() async {
+  //! Features - splash_screen
+
+  //* Bloc
+  sl.registerFactory(
+    () => SplashScreenBloc(
+      navigateToMainScreen: sl(),
+    ),
+  );
+
+  //* usecases
+  sl.registerLazySingleton(
+    () => NavigateToMainScreen(
+      splashScreenRepo: sl(),
+    ),
+  );
+
+  //* repo
+
+  sl.registerLazySingleton<SplashScreenRepo>(
+    () => SplashScreenRepoImpl(
+      networkInfo: sl(),
+    ),
+  );
+
   //! Features - covid_19
 
   //* Bloc

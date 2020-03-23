@@ -21,10 +21,12 @@ class _CovidControlState extends State<CovidControl> {
       children: <Widget>[
         Container(
           child: TextField(
+            
             controller: this.controller,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Input a Country',
+              
             ),
             onChanged: (val) {
               this.inputString = val;

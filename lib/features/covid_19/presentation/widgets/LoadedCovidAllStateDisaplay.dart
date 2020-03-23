@@ -75,6 +75,7 @@ class LoadedCovidAllStateDisplay extends StatelessWidget {
           ],
         ),
       ),
+    
     );
   }
 }
