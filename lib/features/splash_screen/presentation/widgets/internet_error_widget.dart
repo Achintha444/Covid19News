@@ -1,4 +1,6 @@
+import 'package:covid_19_info/features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class InternetErrorWidget extends StatelessWidget {
   @override
@@ -52,6 +54,23 @@ class InternetErrorWidget extends StatelessWidget {
                   letterSpacing: 1,
                 ),
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: 30,
+                bottom: 30,
+              ),
+            ),
+            FloatingActionButton(
+              child: Icon(
+                Icons.replay,
+                size: 30,
+              ),
+              onPressed: () {
+                BlocProvider.of<SplashScreenBloc>(context).dispatch(
+                  NavigateToMainScreenEvent(),
+                );
+              },
             ),
           ],
         ),
