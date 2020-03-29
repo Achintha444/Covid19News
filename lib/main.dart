@@ -6,8 +6,10 @@ import 'features/covid_19/presentation/constants/theme_data.dart';
 import 'injection_container.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await init();
   runApp(MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {

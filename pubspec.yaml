@@ -27,7 +27,7 @@ dependencies:
   http: ^0.12.0+2
 
   #Local Cache
-  shared_preferences: ^0.5.3+4
+  shared_preferences: ^0.5.6+3
 
   #Launcher Icon
   flutter_launcher_icons: ^0.7.4

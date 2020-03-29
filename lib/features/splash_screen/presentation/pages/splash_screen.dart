@@ -1,9 +1,8 @@
-import 'package:covid_19_info/features/covid_19/presentation/pages/coivd_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injection_container.dart';
+import '../../../covid_19/presentation/pages/coivd_page.dart';
 import '../bloc/splash_screen_bloc.dart';
 import '../widgets/internet_error_widget.dart';
 import '../widgets/splash_screen_widget.dart';

@@ -17,13 +17,8 @@ class SplashScreenBloc extends Bloc<SplashScreenEvent, SplashScreenState> {
   }
 
   @override
-  SplashScreenState get initialState {
-    print ('asaaaaaaaaaa');
-    this.dispatch(
-      NavigateToMainScreenEvent(),
-    );
-    return Initial();
-  }
+  SplashScreenState get initialState => Initial();
+
 
   @override
   Stream<SplashScreenState> mapEventToState(
