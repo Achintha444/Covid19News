@@ -6,6 +6,7 @@ import 'package:covid_19_info/core/Usecase/use_case.dart';
 import 'package:covid_19_info/features/covid_19/domain/usecases/get_all_covid_info.dart';
 import 'package:covid_19_info/features/covid_19/domain/usecases/get_country_specific_covid_info.dart';
 import 'package:covid_19_info/features/covid_19/domain/usecases/get_lk_specific_covid_info.dart';
+import 'package:covid_19_info/features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
 
@@ -36,16 +37,14 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
   });
 
   @override
-  CovidState get initialState {
-    return Loading();
-  }
+  CovidState get initialState => Empty();
 
   @override
   Stream<CovidState> mapEventToState(
     CovidEvent event,
   ) async* {
     if (event is GetAllCovidInfoEvent) {
-      yield Loading();
+      yield Empty();
       final response = await getAllCovidInfo(
         NoParams(),
       );
@@ -69,7 +68,7 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
         },
       );
     } else if (event is GetLKSpecificCovidInfoEvent) {
-      yield Loading();
+      yield Empty();
       final response = await getLKSpecifiCovidInfo(
         NoParams(),
       );

@@ -1,7 +1,6 @@
-import 'package:covid_19_info/features/covid_19/domain/entities/covid_all.dart';
-import 'package:covid_19_info/features/covid_19/domain/entities/covid_country.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../domain/entities/covid_country.dart';
 
 class LoadedCovidCountryDisplay extends StatelessWidget {
   final CovidCountry covidCountry;
@@ -14,7 +13,7 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
     print(this.covidCountry.getImageUrl);
     return Container(
       padding: EdgeInsets.only(top: 10, bottom: 20),
-      height: (MediaQuery.of(context).size.height) / 1.9,
+      height: (MediaQuery.of(context).size.height) / 1.7,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,8 +30,30 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 5,
-                bottom: 5,
+                top: 2.5,
+                bottom: 2.5,
+              ),
+            ),
+            Center(
+              child: Container(
+                height: 60,
+                width: 100,
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    alignment: Alignment.center,
+                    image: NetworkImage(
+                      this.covidCountry.getImageUrl,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 10,
+                bottom: 10,
               ),
             ),
             Center(

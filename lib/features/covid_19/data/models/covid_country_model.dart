@@ -16,25 +16,25 @@ import '../../domain/entities/covid_country.dart';
 class CovidCountryModel extends CovidCountry {
   String _imageUrl;
   String _country;
-  int _cases;
-  int _deaths;
-  int _todayDeaths;
-  int _recovered;
-  int _active;
-  int _critical;
-  int _casesPerOneMillion;
+  num _cases;
+  num _deaths;
+  num _todayDeaths;
+  num _recovered;
+  num _active;
+  num _critical;
+  num _casesPerOneMillion;
 
   CovidCountryModel({
     @required String imageUrl,
     @required String country,
-    @required int cases,
-    @required int todayCases,
-    @required int deaths,
-    @required int todayDeaths,
-    @required int recovered,
-    @required int active,
-    @required int critical,
-    @required int casesPerOneMillion,
+    @required num cases,
+    @required num todayCases,
+    @required num deaths,
+    @required num todayDeaths,
+    @required num recovered,
+    @required num active,
+    @required num critical,
+    @required num casesPerOneMillion,
   }) : super(
             imageUrl: imageUrl,
             country: country,

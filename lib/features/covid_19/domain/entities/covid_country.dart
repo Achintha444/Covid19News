@@ -14,26 +14,26 @@ import 'package:flutter/material.dart';
 class CovidCountry extends Equatable {
   String _imageUrl;
   String _country;
-  int _cases;
-  int _deaths;
-  int _todayDeaths;
-  int _recovered;
-  int _active;
-  int _critical;
-  int _casesPerOneMillion;
-  int _todayCases;
+  num _cases;
+  num _deaths;
+  num _todayDeaths;
+  num _recovered;
+  num _active;
+  num _critical;
+  num _casesPerOneMillion;
+  num _todayCases;
 
   CovidCountry({
     @required String imageUrl,
     @required String country,
-    @required int cases,
-    @required int todayCases,
-    @required int deaths,
-    @required int todayDeaths,
-    @required int recovered,
-    @required int active,
-    @required int critical,
-    @required int casesPerOneMillion,
+    @required num cases,
+    @required num todayCases,
+    @required num deaths,
+    @required num todayDeaths,
+    @required num recovered,
+    @required num active,
+    @required num critical,
+    @required num casesPerOneMillion,
   }) : super([
           imageUrl,
           country,
@@ -66,35 +66,35 @@ class CovidCountry extends Equatable {
     return this._country;
   }
 
-  int get getCases {
+  num get getCases {
     return this._cases;
   }
 
-  int get getDeaths {
+  num get getDeaths {
     return this._deaths;
   }
 
-  int get getTodayDeaths {
+  num get getTodayDeaths {
     return this._todayDeaths;
   }
 
-  int get getRecovered {
+  num get getRecovered {
     return this._recovered;
   }
 
-  int get getActive {
+  num get getActive {
     return this._active;
   }
 
-  int get getCritical {
+  num get getCritical {
     return this._critical;
   }
 
-  int get getCasesPerOneMillion {
+  num get getCasesPerOneMillion {
     return this._casesPerOneMillion;
   }
 
-  int get getTodayCases{
+  num get getTodayCases{
     return this._todayCases;
   }
 

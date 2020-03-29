@@ -31,6 +31,7 @@ class CovidPage extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: Column(
               children: <Widget>[
+                //* World Part
                 _buildWorld(context),
 
                 Padding(
@@ -40,191 +41,20 @@ class CovidPage extends StatelessWidget {
                   ),
                 ),
 
+                //* SL Part
                 _buildSL(context),
-                //* Top Half
+
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 10,
+                    bottom: 10,
+                  ),
+                ),
+
+                //* Country Part
                 _buildCountry(context),
-                //* Bottom Half
-                
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  BlocProvider<CovidBloc> _buildBody(BuildContext context) {
-    return BlocProvider(
-      builder: (context) => sl<CovidBloc>(),
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'World'.toUpperCase(),
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 3,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 15,
-                      right: 15,
-                    ),
-                  ),
-                  RaisedButton(
-                    color: Theme.of(context).accentColor,
-                    child: Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.refresh,
-                          color: Colors.white,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 2,
-                            right: 2,
-                          ),
-                        ),
-                        Text(
-                          'Refresh'.toUpperCase(),
-                          style:
-                              TextStyle(letterSpacing: 1, color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 10,
-                  bottom: 10,
-                ),
-              ),
-
-              BlocBuilder<CovidBloc, CovidState>(builder: (context, state) {
-                if (state is Loading) {
-                  return new LoadingStateDisplayGetAllEventDispatch();
-                } else if (state is LoadedCovidAll) {
-                  return LoadedCovidAllStateDisplayNew(
-                    covidAll: state.covidAll,
-                  );
-                } else if (state is ErrorAll) {
-                  return EmptyStateDisplay(
-                    message: state.message,
-                  );
-                } else {
-                  return Text(state.toString());
-                }
-              }),
-
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 10,
-                  bottom: 10,
-                ),
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Sri Lanka'.toUpperCase(),
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 3,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 15,
-                      right: 15,
-                    ),
-                  ),
-                  RaisedButton(
-                    color: Theme.of(context).accentColor,
-                    child: Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.refresh,
-                          color: Colors.white,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 2,
-                            right: 2,
-                          ),
-                        ),
-                        Text(
-                          'Refresh'.toUpperCase(),
-                          style:
-                              TextStyle(letterSpacing: 1, color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 10,
-                  bottom: 10,
-                ),
-              ),
-
-              BlocBuilder<CovidBloc, CovidState>(builder: (context, state) {
-                if (state is Loading) {
-                  return new LoadingStateDisplayGetSLEventDispatch();
-                } else if (state is LoadedCovidSL) {
-                  return LoadedCovidSLStateDisplayNew(
-                    covidSL: state.covidSL,
-                  );
-                } else if (state is ErrorSL) {
-                  return EmptyStateDisplay(
-                    message: state.message,
-                  );
-                } else {
-                  return Text(state.toString());
-                }
-              }),
-
-              //* Top Half
-
-              BlocBuilder<CovidBloc, CovidState>(
-                builder: (context, state) {
-                  if (state is Empty) {
-                    return EmptyStateDisplay(message: 'Start Searching');
-                  } else if (state is Loading) {
-                    return LoadingStateDisplay();
-                  } else if (state is Error) {
-                    return EmptyStateDisplay(message: state.message);
-                  } else if (state is LoadedCovidAll) {
-                    return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
-                  } else if (state is LoadedCovidCountry) {
-                    return LoadedCovidCountryDisplay(
-                        covidCountry: state.covidCountry);
-                  }
-                },
-              ),
-
-              //* Bottom Half
-              new CovidControl(),
-            ],
           ),
         ),
       ),
@@ -244,7 +74,7 @@ class CovidPage extends StatelessWidget {
             ),
           ),
           BlocBuilder<CovidBloc, CovidState>(builder: (context, state) {
-            if (state is Loading) {
+            if (state is Empty) {
               return new LoadingStateDisplayGetAllEventDispatch();
             } else if (state is LoadedCovidAll) {
               return LoadedCovidAllStateDisplayNew(
@@ -277,7 +107,7 @@ class CovidPage extends StatelessWidget {
           ),
           BlocBuilder<CovidBloc, CovidState>(
             builder: (context, state) {
-              if (state is Loading) {
+              if (state is Empty) {
                 return new LoadingStateDisplayGetSLEventDispatch();
               } else if (state is LoadedCovidSL) {
                 return LoadedCovidSLStateDisplayNew(
@@ -302,25 +132,39 @@ class CovidPage extends StatelessWidget {
       builder: (context) => sl<CovidBloc>(),
       child: Column(
         children: <Widget>[
+          Text(
+            'Update of a Country'.toUpperCase(),
+            style: TextStyle(
+              fontSize: 25,
+              color: Theme.of(context).primaryColor,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 2.5,
+              bottom: 2.5,
+            ),
+          ),
           BlocBuilder<CovidBloc, CovidState>(
             builder: (context, state) {
               if (state is Empty) {
-                return EmptyStateDisplay(message: 'Start Searching For A Update of a Country');
+                return EmptyStateDisplay(
+                    message: 'Input a Country to get Updates');
               } else if (state is Loading) {
                 return LoadingStateDisplay();
               } else if (state is Error) {
                 return EmptyStateDisplay(message: state.message);
-              } else if (state is LoadedCovidAll) {
-                return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
               } else if (state is LoadedCovidCountry) {
-                return LoadedCovidCountryDisplay(covidCountry: state.covidCountry);
+                return LoadedCovidCountryDisplay(
+                    covidCountry: state.covidCountry);
               }
             },
           ),
           CovidControl(),
         ],
       ),
-    
     );
   }
 }
