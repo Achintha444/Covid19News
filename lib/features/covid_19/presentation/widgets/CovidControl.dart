@@ -21,12 +21,10 @@ class _CovidControlState extends State<CovidControl> {
       children: <Widget>[
         Container(
           child: TextField(
-            
             controller: this.controller,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Input a Country',
-              
             ),
             onChanged: (val) {
               this.inputString = val;
@@ -47,46 +45,13 @@ class _CovidControlState extends State<CovidControl> {
             Expanded(
               child: RaisedButton(
                 child: Text('Search'),
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).primaryColor,
                 textColor: Colors.white,
                 onPressed: () {
                   this.controller.clear();
                   BlocProvider.of<CovidBloc>(context).dispatch(
                     GetCountrySpecificCovidInfoEvent(country: this.inputString),
                   );
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 5,
-                right: 5,
-              ),
-            ),
-            Expanded(
-              child: RaisedButton(
-                child: Text('All Information'),
-                color: Theme.of(context).primaryColor,
-                textColor: Colors.white,
-                onPressed: () {
-                  BlocProvider.of<CovidBloc>(context).dispatch(
-                    GetAllCovidInfoEvent(),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-        Row(
-          children: <Widget>[
-            Expanded(
-              child: RaisedButton(
-                child: Text('Updates of Sri Lanka'),
-                color: Theme.of(context).primaryColor,
-                textColor: Colors.white,
-                onPressed: () {
-                  BlocProvider.of<CovidBloc>(context)
-                      .dispatch(GetLKSpecificCovidInfoEvent());
                 },
               ),
             ),
@@ -115,6 +80,12 @@ class _CovidControlState extends State<CovidControl> {
               style: TextStyle(fontSize: 14),
               textAlign: TextAlign.center,
             ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 5,
+            bottom: 5,
           ),
         ),
       ],

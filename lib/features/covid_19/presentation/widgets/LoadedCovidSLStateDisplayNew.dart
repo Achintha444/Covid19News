@@ -10,7 +10,6 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green,
       height: MediaQuery.of(context).size.height / 3.5,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -21,7 +20,7 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                 height: MediaQuery.of(context).size.height / 3.5,
                 width: MediaQuery.of(context).size.height / 3.5,
                 child: Card(
-                  color: Colors.blue,
+                  color: Colors.blueGrey,
                   margin: EdgeInsets.all(5),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -32,6 +31,261 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           'Total'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Cases'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getCases.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 3.5,
+                width: MediaQuery.of(context).size.height / 3.5,
+                child: Card(
+                  color: Colors.blueAccent,
+                  margin: EdgeInsets.all(5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Today'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Cases'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getTodayCases.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 3.5,
+                width: MediaQuery.of(context).size.height / 3.5,
+                child: Card(
+                  color: Colors.redAccent,
+                  margin: EdgeInsets.all(5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Total'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Deaths'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getDeaths.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 3.5,
+                width: MediaQuery.of(context).size.height / 3.5,
+                child: Card(
+                  color: Colors.red,
+                  margin: EdgeInsets.all(5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Today'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Deaths'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getTodayDeaths.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 3.5,
+                width: MediaQuery.of(context).size.height / 3.5,
+                child: Card(
+                  color: Colors.green,
+                  margin: EdgeInsets.all(5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Total'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Recovered'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getRecovered.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 3.5,
+                width: MediaQuery.of(context).size.height / 3.5,
+                child: Card(
+                  color: Colors.orange,
+                  margin: EdgeInsets.all(5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Active'.toUpperCase(),
                           style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 2,
@@ -72,7 +326,7 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                 height: MediaQuery.of(context).size.height / 3.5,
                 width: MediaQuery.of(context).size.height / 3.5,
                 child: Card(
-                  color: Colors.blue,
+                  color: Colors.deepPurpleAccent,
                   margin: EdgeInsets.all(5),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -82,11 +336,35 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'All Cases'.toUpperCase(),
+                          'Critical'.toUpperCase(),
                           style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 2,
                             fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Cases'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getCritical.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -99,7 +377,7 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                 height: MediaQuery.of(context).size.height / 3.5,
                 width: MediaQuery.of(context).size.height / 3.5,
                 child: Card(
-                  color: Colors.blue,
+                  color: Colors.grey,
                   margin: EdgeInsets.all(5),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -109,7 +387,7 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'All Cases'.toUpperCase(),
+                          'Cases'.toUpperCase(),
                           style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 2,
@@ -117,30 +395,27 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height / 3.5,
-                width: MediaQuery.of(context).size.height / 3.5,
-                child: Card(
-                  color: Colors.blue,
-                  margin: EdgeInsets.all(5),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
                         Text(
-                          'All Cases'.toUpperCase(),
+                          'Per Million'.toUpperCase(),
                           style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 2,
                             fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getCasesPerOneMillion.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -149,6 +424,7 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                   ),
                 ),
               ),
+            
             ],
           )
         ],

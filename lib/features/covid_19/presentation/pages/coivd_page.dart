@@ -1,4 +1,6 @@
 import '../widgets/WorldControl.dart';
+
+import '../widgets/WorldControl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -42,7 +44,7 @@ class CovidPage extends StatelessWidget {
                 //* Top Half
                 _buildCountry(context),
                 //* Bottom Half
-                new CovidControl(),
+                
               ],
             ),
           ),
@@ -298,21 +300,27 @@ class CovidPage extends StatelessWidget {
   BlocProvider<CovidBloc> _buildCountry(BuildContext context) {
     return BlocProvider(
       builder: (context) => sl<CovidBloc>(),
-      child: BlocBuilder<CovidBloc, CovidState>(
-        builder: (context, state) {
-          if (state is Empty) {
-            return EmptyStateDisplay(message: 'Start Searching');
-          } else if (state is Loading) {
-            return LoadingStateDisplay();
-          } else if (state is Error) {
-            return EmptyStateDisplay(message: state.message);
-          } else if (state is LoadedCovidAll) {
-            return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
-          } else if (state is LoadedCovidCountry) {
-            return LoadedCovidCountryDisplay(covidCountry: state.covidCountry);
-          }
-        },
+      child: Column(
+        children: <Widget>[
+          BlocBuilder<CovidBloc, CovidState>(
+            builder: (context, state) {
+              if (state is Empty) {
+                return EmptyStateDisplay(message: 'Start Searching For A Update of a Country');
+              } else if (state is Loading) {
+                return LoadingStateDisplay();
+              } else if (state is Error) {
+                return EmptyStateDisplay(message: state.message);
+              } else if (state is LoadedCovidAll) {
+                return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
+              } else if (state is LoadedCovidCountry) {
+                return LoadedCovidCountryDisplay(covidCountry: state.covidCountry);
+              }
+            },
+          ),
+          CovidControl(),
+        ],
       ),
+    
     );
   }
 }

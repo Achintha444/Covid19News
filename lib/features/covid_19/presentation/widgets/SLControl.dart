@@ -20,7 +20,7 @@ class SLControl extends StatelessWidget {
             fontSize: 25,
             color: Theme.of(context).primaryColor,
             fontWeight: FontWeight.bold,
-            letterSpacing: 3,
+            letterSpacing: 2,
           ),
         ),
         Padding(
@@ -58,4 +58,3 @@ class SLControl extends StatelessWidget {
     );
   }
 }
-
