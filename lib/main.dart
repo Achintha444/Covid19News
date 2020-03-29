@@ -1,8 +1,8 @@
-import 'package:covid_19_info/features/covid_19/presentation/pages/coivd_page.dart';
-import 'package:covid_19_info/features/splash_screen/presentation/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'features/covid_19/presentation/constants/theme_data.dart';
+import 'features/covid_19/presentation/pages/coivd_page.dart';
+import 'features/splash_screen/presentation/pages/splash_screen.dart';
 import 'injection_container.dart';
 
 Future<void> main() async {
