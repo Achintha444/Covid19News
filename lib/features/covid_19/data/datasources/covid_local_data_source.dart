@@ -68,7 +68,7 @@ class CovidLocalDataSourceImpl implements CovidLocalDataSource {
         this._sharedPreferences.getString('CACHED_COVID_COUNTRY');
     if (jsonCovidCountry != null) {
       return Future.value(
-        CovidCountryModel.fromJsonSingle(
+        CovidCountryModel.fromJson(
           json.decode(jsonCovidCountry),
         ),
       );

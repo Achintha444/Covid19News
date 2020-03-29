@@ -45,20 +45,13 @@ class CovidRemoteDataSourceImpl implements CovidRemoteDataSource {
     final responseCovid = await this
         ._httpClient
         .get('https://corona.lmao.ninja/countries/$country');
-    final responseCountry = await this
-        ._httpClient
-        .get('http://restcountries.eu/rest/v2/name/$country');
-    if(responseCountry.statusCode == 404){
-      throw CountryNotFoundException();
-    }
-    else if ((responseCovid.statusCode != 200) ||
-        (responseCountry.statusCode != 200)) {
+
+    if ((responseCovid.statusCode != 200)) {
       throw ServerException();
     } else {
       try {
         return CovidCountryModel.fromJson(
-          json.decode(responseCovid.body),
-          json.decode(responseCountry.body)[0],
+          json.decode(responseCovid.body)
         );
       } on Exception {
         throw CountryNotFoundException();

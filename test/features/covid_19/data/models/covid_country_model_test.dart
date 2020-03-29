@@ -45,12 +45,9 @@ void main() {
       final Map<String, dynamic> jsonMapCovidCountry = json.decode(
         fixtureReader('covid_country.json'),
       );
-      final Map<String, dynamic> jsonMapCountry = json.decode(
-        fixtureReader('country.json'),
-      )[0];
       //act
       final result =
-          CovidCountryModel.fromJson(jsonMapCovidCountry, jsonMapCountry);
+          CovidCountryModel.fromJson(jsonMapCovidCountry);
       //assert
       expect(result, equals(tCovidAll));
     },

@@ -50,7 +50,7 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
         NoParams(),
       );
       yield response.fold(
-        (faliure) => Error(message: _mapFaliureToMessage(faliure)),
+        (faliure) => ErrorAll(message: _mapFaliureToMessage(faliure)),
         (covidAll) => LoadedCovidAll(covidAll: covidAll),
       );
     } else if (event is GetCountrySpecificCovidInfoEvent) {
@@ -74,8 +74,8 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
         NoParams(),
       );
       yield response.fold(
-        (faliure) => Error(message: _mapFaliureToMessage(faliure)),
-        (covidCountry) => LoadedCovidCountry(covidCountry: covidCountry),
+        (faliure) => ErrorSL(message: _mapFaliureToMessage(faliure)),
+        (covidSL) => LoadedCovidSL(covidSL: covidSL),
       );
     }
   }

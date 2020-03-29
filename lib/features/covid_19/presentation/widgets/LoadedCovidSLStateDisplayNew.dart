@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/entities/covid_country.dart';
+
 class LoadedCovidSLStateDisplayNew extends StatelessWidget {
-  const LoadedCovidSLStateDisplayNew({
-    Key key,
-  }) : super(key: key);
+  final CovidCountry covidSL;
+
+  LoadedCovidSLStateDisplayNew({@required this.covidSL});
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +31,35 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'All Cases'.toUpperCase(),
+                          'Total'.toUpperCase(),
                           style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 2,
                             fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Cases'.toUpperCase(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            bottom: 5,
+                          ),
+                        ),
+                        Text(
+                          this.covidSL.getActive.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 2,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -130,4 +156,3 @@ class LoadedCovidSLStateDisplayNew extends StatelessWidget {
     );
   }
 }
-

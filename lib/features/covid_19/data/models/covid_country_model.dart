@@ -1,6 +1,6 @@
-import 'package:covid_19_info/core/Error/exceptions.dart';
-import 'package:covid_19_info/features/covid_19/domain/entities/covid_country.dart';
 import 'package:flutter/material.dart';
+
+import '../../domain/entities/covid_country.dart';
 
 /* 
 {"country":"Sri Lanka",
@@ -57,28 +57,28 @@ class CovidCountryModel extends CovidCountry {
     this._casesPerOneMillion = casesPerOneMillion;
   }
 
-  factory CovidCountryModel.fromJson(
-      Map<String, dynamic> covidCountry, Map<String, dynamic> country) {
-    return CovidCountryModel(
-      active: covidCountry['active'],
-      country: covidCountry['country'],
-      critical: covidCountry['critical'],
-      imageUrl: covidCountry['country'],
-      casesPerOneMillion: covidCountry['casesPerOneMillion'],
-      todayDeaths: covidCountry['todayDeaths'],
-      cases: covidCountry['cases'],
-      todayCases: covidCountry['todayCases'],
-      deaths: covidCountry['deaths'],
-      recovered: covidCountry['recovered'],
-    );
-  }
+  // factory CovidCountryModel.fromJson(
+  //     Map<String, dynamic> covidCountry, Map<String, dynamic> country) {
+  //   return CovidCountryModel(
+  //     active: covidCountry['active'],
+  //     country: covidCountry['country'],
+  //     critical: covidCountry['critical'],
+  //     imageUrl: covidCountry['flag'],
+  //     casesPerOneMillion: covidCountry['casesPerOneMillion'],
+  //     todayDeaths: covidCountry['todayDeaths'],
+  //     cases: covidCountry['cases'],
+  //     todayCases: covidCountry['todayCases'],
+  //     deaths: covidCountry['deaths'],
+  //     recovered: covidCountry['recovered'],
+  //   );
+  // }
 
-  factory CovidCountryModel.fromJsonSingle(Map<String, dynamic> covidCountry) {
+  factory CovidCountryModel.fromJson(Map<String, dynamic> covidCountry) {
     return CovidCountryModel(
       active: covidCountry['active'],
       country: covidCountry['country'],
       critical: covidCountry['critical'],
-      imageUrl: covidCountry['flag'],
+      imageUrl: covidCountry['countryInfo']['flag'],
       casesPerOneMillion: covidCountry['casesPerOneMillion'],
       todayDeaths: covidCountry['todayDeaths'],
       cases: covidCountry['cases'],
