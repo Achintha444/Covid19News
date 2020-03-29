@@ -13,7 +13,7 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
     print(this.covidCountry.getImageUrl);
     return Container(
       padding: EdgeInsets.only(top: 10, bottom: 20),
-      height: (MediaQuery.of(context).size.height) / 1.7,
+      height: (MediaQuery.of(context).size.height) / 1.4,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -37,15 +37,15 @@ class LoadedCovidCountryDisplay extends StatelessWidget {
             Center(
               child: Container(
                 height: 60,
-                width: 100,
                 decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    alignment: Alignment.center,
-                    image: NetworkImage(
-                      this.covidCountry.getImageUrl,
-                    ),
+                  border: Border.all(
+                    color: Theme.of(context).accentColor,
+                    width: 1,
+                  ),
+                ),
+                child: Image(
+                  image: NetworkImage(
+                    this.covidCountry.getImageUrl,
                   ),
                 ),
               ),

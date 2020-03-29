@@ -8,20 +8,19 @@ import 'injection_container.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await init();
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
-  
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Covid 19 News',
       theme: themeData,
-      routes: <String,WidgetBuilder>{
+      routes: <String, WidgetBuilder>{
         '/splash': (BuildContext context) => SplashScreen(),
         '/covidPage': (BuildContext context) => CovidPage(),
       },
