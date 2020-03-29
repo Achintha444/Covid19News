@@ -1,6 +1,7 @@
-import '../bloc/covid_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/covid_bloc.dart';
 
 class CovidControl extends StatefulWidget {
   const CovidControl({

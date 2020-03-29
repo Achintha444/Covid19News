@@ -1,5 +1,6 @@
-import 'package:covid_19_info/features/covid_19/domain/entities/covid_all.dart';
 import 'package:flutter/material.dart';
+
+import '../../domain/entities/covid_all.dart';
 
 class LoadedCovidAllStateDisplay extends StatelessWidget {
   final CovidAll covidAll;

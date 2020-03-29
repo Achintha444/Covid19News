@@ -1,6 +1,7 @@
-import 'package:covid_19_info/features/covid_19/presentation/bloc/covid_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/covid_bloc.dart';
 
 class WorldControl extends StatelessWidget {
   const WorldControl({

@@ -1,6 +1,3 @@
-import '../widgets/WorldControl.dart';
-
-import '../widgets/WorldControl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,7 +5,6 @@ import '../../../../injection_container.dart';
 import '../bloc/covid_bloc.dart';
 import '../widgets/CovidControl.dart';
 import '../widgets/EmptyStateDisplay.dart';
-import '../widgets/LoadedCovidAllStateDisaplay.dart';
 import '../widgets/LoadedCovidAllStateDisplayNew.dart';
 import '../widgets/LoadedCovidCountryDisplay.dart';
 import '../widgets/LoadedCovidSLStateDisplayNew.dart';
@@ -16,6 +12,7 @@ import '../widgets/LoadingStateDisplay.dart';
 import '../widgets/LoadingStateDisplayGetAllEventDispatch.dart';
 import '../widgets/LoadingStateDisplayGetSLEventDispatch.dart';
 import '../widgets/SLControl.dart';
+import '../widgets/WorldControl.dart';
 import '../widgets/app_bar_design.dart';
 
 class CovidPage extends StatelessWidget {
