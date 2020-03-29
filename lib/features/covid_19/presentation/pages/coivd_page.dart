@@ -1,4 +1,3 @@
-import 'package:covid_19_info/features/covid_19/presentation/widgets/LoadedCovidCountryDisplay.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -7,7 +6,11 @@ import '../bloc/covid_bloc.dart';
 import '../widgets/CovidControl.dart';
 import '../widgets/EmptyStateDisplay.dart';
 import '../widgets/LoadedCovidAllStateDisaplay.dart';
+import '../widgets/LoadedCovidAllStateDisplayNew.dart';
+import '../widgets/LoadedCovidCountryDisplay.dart';
+import '../widgets/LoadedCovidSLStateDisplayNew.dart';
 import '../widgets/LoadingStateDisplay.dart';
+import '../widgets/LoadingStateDisplayEventDispatch.dart';
 import '../widgets/app_bar_design.dart';
 
 class CovidPage extends StatelessWidget {
@@ -17,6 +20,7 @@ class CovidPage extends StatelessWidget {
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBarDesign(),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: _buildBody(context),
       ),
     );
@@ -25,12 +29,142 @@ class CovidPage extends StatelessWidget {
   BlocProvider<CovidBloc> _buildBody(BuildContext context) {
     return BlocProvider(
       builder: (context) => sl<CovidBloc>(),
-      child: Center(
+      child: Container(
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
             children: <Widget>[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'World'.toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Theme.of(context).primaryColor,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 3,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 15,
+                      right: 15,
+                    ),
+                  ),
+                  RaisedButton(
+                    color: Theme.of(context).accentColor,
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.refresh,
+                          color: Colors.white,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 2,
+                            right: 2,
+                          ),
+                        ),
+                        Text(
+                          'Refresh'.toUpperCase(),
+                          style:
+                              TextStyle(letterSpacing: 1, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 10,
+                  bottom: 10,
+                ),
+              ),
+
+              BlocBuilder<CovidBloc, CovidState>(builder: (context, state) {
+                if (state is Loading) {
+                  return LoadingStateDisplayEventDispatch(
+                    event: GetAllCovidInfoEvent(),
+                  );
+                } else if (state is LoadedCovidAll) {
+                  return LoadedCovidAllStateDisplayNew(
+                    covidAll: state.covidAll,
+                  );
+                } else if (state is ErrorAll) {
+                  return EmptyStateDisplay(
+                    message: state.message,
+                  );
+                }
+              }),
+
+
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 10,
+                  bottom: 10,
+                ),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Sri Lanka'.toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Theme.of(context).primaryColor,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 3,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 15,
+                      right: 15,
+                    ),
+                  ),
+                  RaisedButton(
+                    color: Theme.of(context).accentColor,
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.refresh,
+                          color: Colors.white,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 2,
+                            right: 2,
+                          ),
+                        ),
+                        Text(
+                          'Refresh'.toUpperCase(),
+                          style:
+                              TextStyle(letterSpacing: 1, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 10,
+                  bottom: 10,
+                ),
+              ),
+
+              LoadedCovidSLStateDisplayNew(),
+
               //* Top Half
+
               BlocBuilder<CovidBloc, CovidState>(
                 builder: (context, state) {
                   if (state is Empty) {
@@ -42,7 +176,8 @@ class CovidPage extends StatelessWidget {
                   } else if (state is LoadedCovidAll) {
                     return LoadedCovidAllStateDisplay(covidAll: state.covidAll);
                   } else if (state is LoadedCovidCountry) {
-                    return LoadedCovidCountryDisplay(covidCountry: state.covidCountry);
+                    return LoadedCovidCountryDisplay(
+                        covidCountry: state.covidCountry);
                   }
                 },
               ),

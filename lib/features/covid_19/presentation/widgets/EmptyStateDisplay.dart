@@ -9,7 +9,7 @@ class EmptyStateDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 10, bottom: 20),
-      height: (MediaQuery.of(context).size.height) / 2,
+      height: (MediaQuery.of(context).size.height) / 4,
       child: Center(
         child: SingleChildScrollView(
           child: Text(

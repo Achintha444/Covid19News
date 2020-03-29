@@ -36,7 +36,9 @@ class CovidBloc extends Bloc<CovidEvent, CovidState> {
   });
 
   @override
-  CovidState get initialState => Empty();
+  CovidState get initialState {
+    return Loading();
+  }
 
   @override
   Stream<CovidState> mapEventToState(
