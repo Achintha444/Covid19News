@@ -19,4 +19,8 @@ Here are few resources you can use if you want to learn more about the used REST
 
 ### v 1.0.0
 
-<image src = 'ss/ss1.jpg' height = '500'>&nbsp;<image src = 'ss/ss2.jpg' height = '500'>>&nbsp;<image src = 'ss/ss3.jpg' height = '500'><image src = 'ss/ss4.jpeg' height = '500'>&nbsp;<image src = 'ss/ss5.jpeg' height = '500'>
+<image src = 'ss/v1.0.0/ss1.jpg' height = '500'>&nbsp;<image src = 'ss/v1.0.0/ss2.jpg' height = '500'>&nbsp;<image src = 'ss/v1.0.0/ss3.jpg' height = '500'><image src = 'ss/v1.0.0/ss4.jpeg' height = '500'>&nbsp;<image src = 'ss/v1.0.0/ss5.jpeg' height = '500'>
+  
+  ### v 1.1.0
+
+<image src = 'ss/v1.1.0/ss1.jpg' height = '500'>&nbsp;<image src = 'ss/v1.1.0/ss2.jpg' height = '500'>&nbsp;<image src = 'ss/v1.1.0/ss3.jpg' height = '500'><image src = 'ss/v1.1.0/ss4.jpeg' height = '500'>&nbsp;<image src = 'ss/v1.1.0/ss5.jpeg' height = '500'>
