@@ -1,7 +1,8 @@
 # Covid 19 News
 
-This is a mobile app created using Flutter, corona.lmao.ninja (Real Time News about Covid 19) and restcountries.eu/rest/v2 (Get the countries flags).
-
+This is a mobile app created using Flutter, corona.lmao.ninja (Real Time News about Covid 19).
+There are some test files that needed to be completed, but anyone is interested they can help me to finish these test files as well.
+Thank You! 😊😊
 
 ## Getting Started
 
