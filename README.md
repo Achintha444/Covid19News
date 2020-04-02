@@ -15,6 +15,7 @@ Here is a video tutorial to get you started if you are interested in learning Fl
 Here are few resources you can use if you want to learn more about the used REST API's in this app
 
 - [Covid 19 REST API](https://github.com/NovelCOVID/API)
+- [Medium Article on how to use COVID 19 API with Flutter](https://medium.com/@achinthaisuru444/integrate-novelcovid-api-with-flutter-70ba1bb62733)
 
 ## Screen Shots of the App
 
