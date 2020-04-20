@@ -30,7 +30,7 @@ class CovidRemoteDataSourceImpl implements CovidRemoteDataSource {
   @override
   Future<CovidAllModel> getAllCovidInfo() async {
     final response =
-        await this._httpClient.get('https://corona.lmao.ninja/all');
+        await this._httpClient.get('https://corona.lmao.ninja/v2/all');
     if (response.statusCode != 200) {
       throw ServerException();
     } else {
@@ -44,7 +44,7 @@ class CovidRemoteDataSourceImpl implements CovidRemoteDataSource {
   Future<CovidCountryModel> getCountrySpecifiCovidInfo(String country) async {
     final responseCovid = await this
         ._httpClient
-        .get('https://corona.lmao.ninja/countries/$country');
+        .get('https://corona.lmao.ninja/v2/countries/$country');
 
     if ((responseCovid.statusCode != 200)) {
       throw ServerException();
