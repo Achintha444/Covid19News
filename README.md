@@ -1,7 +1,8 @@
 # Covid 19 News
 
-This is a mobile app created using Flutter, corona.lmao.ninja (Real Time News about Covid 19) and restcountries.eu/rest/v2 (Get the countries flags).
-
+This is a mobile app created using Flutter, corona.lmao.ninja (Real Time News about Covid 19).
+There are some test files that needed to be completed, but anyone is interested they can help me to finish these test files as well.
+Thank You! 😊😊
 
 ## Getting Started
 
@@ -13,7 +14,12 @@ Here is a video tutorial to get you started if you are interested in learning Fl
 
 Here are few resources you can use if you want to learn more about the used REST API's in this app
 
-- [Covid 19 REST API](https://github.com/NovelCOVID/API)
+- [Covid 19 REST API](https://corona.lmao.ninja/docs/)
+- [Medium Article on how to use COVID 19 API with Flutter](https://medium.com/@achinthaisuru444/integrate-novelcovid-api-with-flutter-70ba1bb62733)
+
+### PS ⭕⭕
+
+Endpoint of the API has been changed. The app has been updated according to it.
 
 ## Screen Shots of the App
 
